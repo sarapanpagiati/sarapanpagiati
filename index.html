@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarapan Pagi Ati - Premium Local Taste</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+    <style>
+        /* --- RESET & VARIABELS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        
+        :root {
+            --primary: #F5A623; /* Oranye Kunyit */
+            --dark: #2d3436;
+            --light-bg: #F9F9F9;
+            --white: #ffffff;
+            --radius: 24px;
+        }
+
+        body { background-color: var(--light-bg); color: var(--dark); line-height: 1.6; }
+
+        /* --- NAVBAR --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color: var(--dark); }
+        .logo span { color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 600; font-size: 0.9rem;}
+
+        /* --- HERO SECTION --- */
+        .hero {
+            margin-top: 80px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-card {
+            /* GANTI FOTO DI SINI (urlnya) */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('landing page.jpg'); 
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 1200px;
+            height: 80vh;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+        .hero .motto { font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; opacity: 0.9; }
+        
+        .btn-fore {
+            background-color: var(--white);
+            color: var(--dark);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+        .btn-fore:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; }
+        .about-text p { color: #666; margin-bottom: 20px; font-size: 1.1rem;}
+        .highlight { color: var(--primary); font-weight: bold; }
+        
+        .about-img { 
+            flex: 1; 
+            min-width: 300px; 
+            height: 400px; 
+            background: url('Lontong Pical.jpg') center/cover;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* --- LOCATION & FOOTER --- */
+        .location {
+            background: white;
+            padding: 80px 20px 20px; /* Padding bawah kecil karena nyambung footer */
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+        .location h2 { font-size: 2rem; margin-bottom: 10px; font-weight: 800; }
+        .location p { margin-bottom: 40px; color: #666; }
+        
+        .map-frame {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            margin: 0 auto 50px; /* Jarak ke sosmed */
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* --- 2. GAYA SOSIAL MEDIA --- */
+        .footer-social {
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        .footer-social h3 { font-size: 1.2rem; margin-bottom: 15px; font-weight: 800; }
+        
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .social-btn {
+            width: 55px; height: 55px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--dark);
+            text-decoration: none; transition: 0.3s;
+        }
+        .social-btn:hover { transform: translateY(-5px); color: white; }
+        /* ... kode fb sebelumnya ... */
+        .social-btn.fb:hover { background: #1877F2; }
+
+        /* TAMBAHKAN INI UNTUK TIKTOK */
+        .social-btn.tiktok:hover { background-color: #000000; color: white; }
+        
+        /* Warna Hover */
+        .social-btn.ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .social-btn.fb:hover { background: #1877F2; }
+
+        .copyright { font-size: 0.8rem; color: #aaa; margin-top: 20px;}
+
+        /* Responsive HP */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about { flex-direction: column-reverse; }
+            .about-img { width: 100%; height: 300px; }
+            nav { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SARAPAN <span>ATI</span></div>
+        <div class="nav-links">
+            <a href="menu.html" style="color: var(--primary);">Menu</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-card">
+            <h1>SARAPAN DARI HATI</h1>
+            <p class="motto">Pilihan sarapan praktis, enak, dan halal di tepi Singkarak.</p>
+            <a href="menu.html" class="btn-fore">LIHAT MENU SEKARANG</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-text">
+            <h2>Rasa Otentik <br>Minang Asli.</h2>
+            <p>
+                Kami menyajikan <span class="highlight">Lontong Pical</span> dengan resep turun temurun. 
+                Sayuran segar, kerupuk renyah, dan siraman kuah kacang yang kaya rempah.
+            </p>
+            <p>
+                Terletak strategis di Jalan Sutama Koto Sani, kami siap menjadi penawar lapar di pagi hari Anda.
+            </p>
+        </div>
+        <div class="about-img"></div> 
+    </section>
+
+    <section class="location">
+        <h2>Kunjungi Kami</h2>
+        <p>Jalan Sutama Koto Sani, Kec. X Koto Singkarak, Kab. Solok</p>
+        
+        <div class="map-frame">
+            <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255328.1866696267!2d100.29902778671877!3d-0.7204390999999968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4d30066397c77%3A0xb4886a438b302c96!2sSarapan%20Pagi%20Ati!5e0!3m2!1sid!2sid!4v1765125197234!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="footer-social">
+            <h3>Ikuti Kami</h3>
+            
+            <div class="social-container">
+                <div class="social-container">
+            <a href="https://www.instagram.com/sarapan_pagi_ati?igsh=MW03MDU4d2hkZWx2MQ==" target="_blank" class="social-btn ig">
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+    
+            <a href="https://www.tiktok.com/@sarapan.pagi.ati?_r=1&_t=ZS-922yJVvD6Bt" target="_blank" class="social-btn tiktok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+</div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2025 Sarapan Pagi Ati. All Rights Reserved.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

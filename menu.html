@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sarapan Pagi Ati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- COPY STYLE DARI INDEX --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        :root {
+            --primary: #F5A623; 
+            --dark: #2d3436;
+            --bg: #F9F9F9;
+            --radius: 20px;
+        }
+        body { background-color: var(--bg); color: var(--dark); padding-bottom: 80px; }
+
+        /* HEADER MENU */
+        .menu-header {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .back-link { text-decoration: none; color: #999; font-size: 0.9rem; font-weight: 600; display: block; margin-bottom: 10px;}
+        .menu-header h1 { font-size: 2rem; font-weight: 800; }
+
+        /* GRID MENU STYLE FORE */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsif */
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-body h3 { font-size: 1.3rem; margin-bottom: 5px; font-weight: 700; }
+        .card-body p { font-size: 0.9rem; color: #777; margin-bottom: 15px; line-height: 1.5; }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto; /* Dorong ke bawah */
+        }
+        .price { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
+        .add-btn {
+            background: var(--dark);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        /* WA FLOAT */
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #25D366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+        }
+
+        /* Foto - Ganti URL ini */
+        .img-1 { background-image: url('Lontong Pical.jpg'); }
+        .img-2 { background-image: url('Sop Ayam.jpg'); }
+        .img-3 { background-image: url('Lontong Gulai.jpg'); }
+        .img-4 { background-image: url('Aneka Gorengan.jpg'); }
+
+    </style>
+</head>
+<body>
+
+    <header class="menu-header">
+        <a href="index.html" class="back-link">Kembali ke Beranda</a>
+        <h1>Daftar Menu</h1>
+    </header>
+
+    <div class="container">
+        <div class="menu-grid">
+            
+            <div class="product-card">
+                <div class="card-img img-1"></div>
+                <div class="card-body">
+                    <div>
+                        <h3>Lontong Pical</h3>
+                        <p>Sayur segar, bumbu kacang pedas manis, kerupuk merah.</p>
+                    </div>
+                    <div class="price-row">
+                        <span class="price">10k</span>
+                        <a href="https://wa.me/628974806323?text=Saya%20pesan%20Lontong%20Pical" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img img-2"></div>
+                <div class="card-body">
+                    <div>
+                        <h3>Sop Ayam</h3>
+                        <p>Kuah kaldu bening gurih dengan suwiran ayam kampung.</p>
+                    </div>
+                    <div class="price-row">
+                        <span class="price">10k</span>
+                        <a href="https://wa.me/628974806323?text=Saya%20pesan%20Sop%20Ayam" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img img-3"></div>
+                <div class="card-body">
+                    <div>
+                        <h3>Lontong Gulai</h3>
+                        <p>Pilihan gulai nangka atau pakis khas kampung.</p>
+                    </div>
+                    <div class="price-row">
+                        <span class="price">6k</span>
+                        <a href="https://wa.me/628974806323?text=Saya%20pesan%20Lontong%20Gulai" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img img-4"></div>
+                <div class="card-body">
+                    <div>
+                        <h3>Aneka Gorengan</h3>
+                        <p>Bakwan, Tahu Isi, Tempe. Renyah dan hangat.</p>
+                    </div>
+                    <div class="price-row">
+                        <span class="price">1k</span>
+                        <a href="https://wa.me/628974806323?text=Saya%20pesan%20Gorengan" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="https://wa.me/628974806323" class="wa-float">
+        ORDER VIA WHATSAPP
+    </a>
+
+</body>
+</html>
